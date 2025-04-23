@@ -1,0 +1,5 @@
+flask
+pdf2image
+opencv-python
+numpy
+Pillow
