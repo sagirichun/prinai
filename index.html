@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <title>Kalkulator Harga Print AI</title>
+</head>
+<body>
+    <h2>Upload File PDF</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <button type="submit">Proses</button>
+    </form>
+
+    {% if hasil %}
+        <h3>Hasil Analisis:</h3>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Halaman</th>
+                <th>Persen Warna</th>
+                <th>Harga Per Lembar</th>
+            </tr>
+            {% for row in hasil %}
+            <tr>
+                <td>{{ row.halaman }}</td>
+                <td>{{ row.warna }}</td>
+                <td>{{ row.harga }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
